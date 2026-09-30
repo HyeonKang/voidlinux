@@ -1,0 +1,12 @@
+You can add this repository by running the following commands:
+
+sudo cp /usr/share/xbps.d/00-repository-main.conf /etc/xbps.d/
+sudo sed -i "1i repository=https://mirror.black-hole.dev/$(xbps-uhelper arch)" /etc/xbps.d/00-repository-main.conf
+
+Then you can install the packages as you would any other:
+
+sudo xbps-install -S hyprland
+sudo xbps-install -S hyprland-devel # If you want to use plugins
+sudo xbps-install -S xdg-desktop-portal-hyprland
+
+xbps-query -Rs hypr # This will require you to have already accepted the repository's fingerprint using xbps-install -S
