@@ -1,0 +1,41 @@
+git clone https://github.com/h-jangra/wm.git ~/wm
+cd ~/wm
+./install.sh
+start-mango
+
+
+⌨️ Keybindings
+All primary keybindings use the Super (Windows) key:
+
+Shortcut	Action	Description
+Super + Return	Terminal	Launch Foot client
+Super + D / Space	App Launcher	Open Rofi application menu
+Super + E	File Manager	Open Thunar
+Super + W	Browser	Open Firefox
+Super + Q	Close Window	Close focused window
+Super + T	Theme Switcher	Interactive Rofi theme selector
+Super + Ctrl + T	Wallpaper Theme	Extract palette from wallpaper (pywal16)
+Super + Shift + W	Wallpaper Menu	Browse and select wallpapers
+Super + S / Print	Screenshot	Interactive screenshot menu
+Super + V	Clipboard	Search clipboard history
+Super + Escape	Power Menu	Lock, Suspend, Reboot, Shutdown
+Super + F	Maximize	Toggle window maximize
+Super + Shift + F	Fullscreen	Toggle fullscreen
+Super + C	Float	Toggle floating window
+Super + Tab	Overview	Toggle workspace overview
+Super + [1-9]	Workspace 1-9	Switch to workspace
+Super + Shift + [1-9]	Move Window	Move window to workspace
+Super + H/J/K/L	Focus	Navigate windows (Vim keys)
+Super + R	Reload	Hot-reload configuration
+🧩 Components
+Component	Software	Description
+Compositor	MangoWC	Fast wlroots + scenefx Wayland compositor
+Status Bar	MangoBar	Native MangoWC top bar with system stats
+Terminal	Foot	Lightweight, fast Wayland terminal
+Launcher / Menus	Rofi-Wayland	App launcher, clipboard, and power menus
+Notifications	Mako	Lightweight Wayland notification daemon
+Wallpaper	swaybg	Wayland wallpaper renderer
+Theming Engine	Python + pywal16	Dynamic palette generator & preset themes
+File Manager	Thunar	Fast GTK file manager
+Audio Server	PipeWire	Low-latency multimedia audio engine
+Display Manager	Ly	Minimal TUI display manager
