@@ -1,0 +1,33 @@
+Void Linux NVIDIA Driver Installation Guide (RTX 3070 Ti Laptop)
+==================================================================
+
+1. Enable Nonfree & Multilib Repositories
+----------------------------------------
+sudo xbps-install -S void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+sudo xbps-install -S
+
+2. Install Drivers and Kernel Headers
+------------------------------------
+sudo xbps-install -y linux-headers nvidia nvidia-libs-32bit
+
+3. Configure DRM Modeset (GRUB)
+-------------------------------
+1. Open GRUB config:
+   sudo nano /etc/default/grub
+2. Add 'nvidia-drm.modeset=1' to GRUB_CMDLINE_LINUX_DEFAULT.
+3. Update GRUB:
+   sudo update-grub
+
+4. Configure Dracut (Early Loading)
+-----------------------------------
+echo 'add_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "' | sudo tee /etc/dracut.conf.d/nvidia.conf
+sudo dracut -f
+
+5. Run Applications with NVIDIA GPU (PRIME Offload)
+--------------------------------------------------
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_KEYBOARD=NVIDIA __VK_LAYER_NV_optimus=NVIDIA <program>
+
+6. Verify Installation
+----------------------
+sudo reboot
+nvidia-smi
