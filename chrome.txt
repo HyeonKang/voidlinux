@@ -1,0 +1,11 @@
+-------flatpak remote-delete flathub
+
+  sudo xbps-install -Sy flatpak
+  ############-if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak update
+wget https://dl.flathub.org/repo/flathub.gpg
+flatpak remote-modify --gpg-import=flathub.gpg flathub
+rm flathub.gpg
+
+  If your system clock is drastically out of sync, enable or restart your NTP daemon (like chrony or openntpd) to correct it.
+If the issue still isn't resolved, let me know:
